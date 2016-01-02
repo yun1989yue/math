@@ -4,7 +4,7 @@ Divide two integers without using multiplication, division and mod operator.
 If it is overflow, return MAX_INT.
 '''
 '''
-bit manipulation O(1) time O(1) space
+bit manipulation O((logN)^2) time O(1) space
 '''
 class Solution(object):
     def divide(self, dividend, divisor):
