@@ -11,14 +11,11 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
-        if num <= 0:
+        if num < 1:
             return False
-        while num % 5 == 0:
-            num /= 5
-        while num % 3 == 0:
-            num /= 3
-        while num % 2 == 0:
-            num /= 2
+        for prime in 2,3,5:
+            while num % prime == 0:
+                num /= prime
         return num == 1
 '''
 Write a program to find the n-th ugly number.
@@ -56,6 +53,13 @@ class Solution(object):
                     cur += 1
         return cur
         
+        
+'''
+Idea:
+1) smallest ugly number is 1, all other ugly numbers are multiple of smaller ugly numbers by 2 or 3 or 5
+2) set three pointers two/three/five, if nums[two] is added, then nums[two+1] has not been added to num and it is smallest ugly number 
+to be added as a multiple of two
+'''
 '''
 D.P. O(n) time O(n) space
 '''
